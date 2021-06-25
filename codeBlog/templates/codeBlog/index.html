@@ -1,0 +1,37 @@
+{% extends 'codeBlog/base.html'%}
+{% block content%}
+    {% for post in posts %}
+    <!-- Page content-->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Post content-->
+                <article>
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2">Posted on {{ post.date_posted|date:"F d, Y"}}</div>
+
+                    </header>
+
+                  <!-- Post content-->
+                    <section class="mb-5">
+                      <div class="card bg-light">
+                        <div class="card-body">
+
+                          <p class="fs-5 mb-4">{{ post.body }}</p>
+                          </div>
+                      </div>
+                    </section>
+                </article>
+              </div>
+
+            </div>
+
+          </div>
+
+
+    {% endfor %}
+{% endblock %}
